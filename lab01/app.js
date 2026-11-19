@@ -13,19 +13,25 @@ import http from "node:http";
 
 const PORT = 3000;
 const MY_NAME = "Kaweerattana Chanapayuck";
+const MY_NICKNAME = "King";
 const MY_STUDENT_ID = "692115003";
 const MY_FAV_LANGUAGE = "Java";
 
 const server = http.createServer((req, res) => {
   console.log(req.method, req.url);
 
-  if (req.method === "GET" && req.url === "/") {
+  const pathname = new URL(req.url ?? "/", `http://localhost:${PORT}`).pathname;
+
+  if (req.method === "GET" && pathname === "/") {
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-    res.end(`<h1>Hello, 953261!</h1>` + `<p>My name is ${MY_NAME} (student ID ${MY_STUDENT_ID})</p>`);
+    res.end(
+      `<h1>Hello, 953261!</h1>` +
+        `<p>My name is ${MY_NAME} (${MY_NICKNAME}), student ID ${MY_STUDENT_ID}</p>`
+    );
     return;
   }
 
-  if (req.method === "GET" && req.url === "/api/me") {
+  if (req.method === "GET" && pathname === "/api/me") {
     res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
     res.end(
       JSON.stringify({
