@@ -12,21 +12,33 @@
 import http from "node:http";
 
 const PORT = 3000;
+const MY_NAME = "Kaweerattana Chanapayuck";
+const MY_STUDENT_ID = "692115003";
+const MY_FAV_LANGUAGE = "Java";
 
 const server = http.createServer((req, res) => {
   console.log(req.method, req.url);
 
   if (req.method === "GET" && req.url === "/") {
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-    res.end("<h1>Hello, 953261!</h1><p>My name is ______ (student ID ______)</p>");
+    res.end(`<h1>Hello, 953261!</h1>` + `<p>My name is ${MY_NAME} (student ID ${MY_STUDENT_ID})</p>`);
     return;
   }
 
-  // TODO: add GET /api/me here
+  if (req.method === "GET" && req.url === "/api/me") {
+    res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+    res.end(
+      JSON.stringify({
+        name: MY_NAME,
+        studentId: MY_STUDENT_ID,
+        favouriteLanguage: MY_FAV_LANGUAGE,
+      })
+    );
+    return;
+  }
 
-  // TODO: replace this with a proper 404 response
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Not done yet");
+  res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
+  res.end("<h1>404 Not Found</h1><p>That route does not exist on this server.</p>");
 });
 
 server.listen(PORT, () => console.log(`Running at http://localhost:${PORT}`));
