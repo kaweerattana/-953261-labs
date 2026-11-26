@@ -1,5 +1,4 @@
 // 953261 Lab 2 — Part B warm-up: fix 5 bugs from the Week 1 quiz
-// Run:  npm run warmup
 // Each line prints ✅ when the function is correct. Fix the code until you see 5 × ✅.
 // Do NOT change the check(...) lines at the bottom — only the functions.
 
