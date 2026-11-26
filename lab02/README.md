@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| **Name** | _your full name_ |
-| **Nickname** | _your nickname_ |
-| **Student ID** | _6xxxxxxxx_ |
+| **Name** | _Kaweerattana Chanapayuck_ |
+| **Nickname** | _King_ |
+| **Student ID** | _692115003_ |
 | **Section** | 701 |
 
 ## How to run
@@ -18,12 +18,12 @@ npm start        # Part D — the daily report
 
 ## My own function (Part D)
 
-_Name of your function, what it returns, and which array methods it uses._
+_Big Order Function Use normal array method_
 
 ## What I learned today
 
-_Write 2–3 sentences in your own words: when would you use map, filter, find and reduce?_
+_Learn how to use map,reduce,filter,etc and learn how to create my own function_
 
 ## AI-use statement
 
-_Did you use an AI tool in this lab? If yes, which one and for what. If no, write "No AI tools used."_
+_I used AI to help looking for bug that I try to see but could not and use to see some code to learn and adapt from it_
