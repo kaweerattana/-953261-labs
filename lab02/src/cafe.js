@@ -8,28 +8,36 @@
 // Return an array of item names, in menu order.
 // menuNames(menu) → ["Thai Iced Tea", "Americano", ...]
 export function menuNames(menu) {
-  // TODO
+  const names =  menu.map((i) => i.name);
+  return names;
 }
+
+
 
 // Task 2 — filter
 // Return only the items whose `available` is true.
 export function availableItems(menu) {
-  // TODO
+  const open = menu.filter((i) => i.available);
+  return open;
 }
 
 // Task 3 — find
 // Return the item with this id, or undefined if there is none.
 // findItem(menu, "F01") → { id: "F01", name: "Khao Soi", ... }
 export function findItem(menu, id) {
-  // TODO
+  const menuid = menu.find((i) => i.id === id);
+  return menuid;
 }
 
 // Task 4 — filter + map
 // Return the NAMES of the available items in one category.
 // availableIn(menu, "dessert") → ["Mango Sticky Rice", "Coconut Ice Cream"]
 export function availableIn(menu, category) {
-  // TODO
+  return menu
+  .filter((i) => i.available && i.category === category)
+  .map((i) => i.name);
 }
+
 
 // Task 5 — template literal + destructuring
 // Return one line of text for the menu board:
