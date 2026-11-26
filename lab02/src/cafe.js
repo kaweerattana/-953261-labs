@@ -44,16 +44,22 @@ export function availableIn(menu, category) {
 //   "Thai Iced Tea — 45 THB"
 //   "Butterfly Pea Soda — 50 THB (sold out)"     ← when available is false
 // Hint: start with  const { name, price, available } = item;
-export function menuLine(item) {
-  // TODO
+export function menuLine(i) {
+  const { name, price, available } = i;
+  const status = available ? "" : " (sold out)";
+  return `${name} — ${price} THB${status}`;
 }
 
 // Task 6 — spread
 // Return a NEW item with the price reduced by `percent`, rounded to a whole baht.
 // The original item must not change.
 // withDiscount({ ..., price: 45 }, 10) → { ..., price: 41 }   (45 × 0.9 = 40.5 → 41)
-export function withDiscount(item, percent) {
-  // TODO
+export function withDiscount(i, percent) {
+  const discountedPrice = Math.round(i.price * (1 - percent / 100));
+  return {
+    ...i,
+    price: discountedPrice
+  };
 }
 
 // Task 7 — reduce + find
